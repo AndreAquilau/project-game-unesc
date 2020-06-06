@@ -1,12 +1,12 @@
 <?php
 
-define('URL_BASE','http://localhost/unesc/php_mvc/Projeto-Game/'); //URL do projeto
+define('URL_BASE','http://localhost/unesc/php_mvc/Projeto-Game'); //URL do projeto
 define('BASE_CSS', 'public/assets/css/style.css');
 define('BASE_JAVASCRIPT', 'public/main.js');
-define('APP_JAVASCRIPT', 'public/assets/js/plugin.js');
-define('JQUERY_JAVASCRIPT', 'public/assets/js/app.js');
-define('PLUGIN_JAVASCRIPT', 'public/assets/js/jquery.js');
-define('IMG_LOGO', '' );
+define('APP_JAVASCRIPT', 'public/assets/js/app.js');
+define('JQUERY_JAVASCRIPT', 'public/assets/js/jquery-1.11.1.min.js');
+define('PLUGIN_JAVASCRIPT', 'public/assets/js/plugins.js');
+define('ASSETS', 'public/assets');
 
 /*
  * Definição constantes de conexão com o banco de dados

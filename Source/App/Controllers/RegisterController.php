@@ -35,7 +35,7 @@ class RegisterController
         $params["ROTA"] = 'POST';
         $params["MESSAGE"] = $user->registrar();
 
-        LoadTemplate("register/register", $params);
+        LoadTemplate("home/main", $params);
     }
 
 

@@ -18,7 +18,7 @@ function loadTemplate(string $view, $data = []){
     $twig->addGlobal('PLUGIN', PLUGIN_JAVASCRIPT);
     $twig->addGlobal('JQUERY', JQUERY_JAVASCRIPT);
 
-    $twig->addGlobal('IMG_LOGO', IMG_LOGO);
+    $twig->addGlobal('ASSETS', ASSETS);
 
     //exibe o template
     echo $twig->render($view.".twig.php", $data);

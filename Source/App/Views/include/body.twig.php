@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{BASE_CSS}}">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
+	<link href="{{ASSETS}}/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="{{ASSETS}}/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
 
     {% block head %} {% endblock %}
 </head>

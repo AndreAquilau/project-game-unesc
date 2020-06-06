@@ -9,7 +9,7 @@
 			<div class="site-header">
 				<div class="container">
 					<a href="index.html" id="branding">
-						<img src="images/logo.png" alt="" class="logo">
+						<img src="{{ASSETS}}/img/logo.png" alt="" class="logo">
 						<div class="logo-text">
 							<h1 class="site-title">Company name</h1>
 							<small class="site-description">Tagline goes here</small>
@@ -33,7 +33,7 @@
 							<li class="menu-item"><a href="products.html">Wii</a></li>
 						</ul> <!-- .menu -->
 						<div class="search-form">
-							<label><img src="images/icon-search.png"></label>
+							<label><img src="{{ASSETS}}/img/icon-search.png"></label>
 							<input type="text" placeholder="Search...">
 						</div> <!-- .search-form -->
 
@@ -44,7 +44,7 @@
 
 			<div class="home-slider">
 				<ul class="slides">
-					<li data-bg-image="dummy/slide-1.jpg">
+					<li data-bg-image="{{ASSETS}}/dummy/slide-1.jpg">
 						<div class="container">
 							<div class="slide-content">
 								<h2 class="slide-title">Kill Zone 3</h2>
@@ -55,10 +55,10 @@
 								<a href="cart.html" class="button">Add to cart</a>
 							</div>
 
-							<img src="dummy/game-cover-1.jpg" class="slide-image">
+							<img src="{{ASSETS}}/dummy/game-cover-1.jpg" class="slide-image">
 						</div>
 					</li>
-					<li data-bg-image="dummy/slide-2.jpg">
+					<li data-bg-image="{{ASSETS}}/dummy/slide-2.jpg">
 						<div class="container">
 							<div class="slide-content">
 								<h2 class="slide-title">Kill Zone 3</h2>
@@ -69,10 +69,10 @@
 								<a href="cart.html" class="button">Add to cart</a>
 							</div>
 
-							<img src="dummy/game-cover-2.jpg" class="slide-image">
+							<img src="/{{ASSETS}}/dummy/game-cover-2.jpg" class="slide-image">
 						</div>
 					</li>
-					<li data-bg-image="dummy/slide-3.jpg">
+					<li data-bg-image="{{ASSETS}}/dummy/slide-3.jpg">
 						<div class="container">
 							<div class="slide-content">
 								<h2 class="slide-title">Kill Zone 3</h2>
@@ -102,7 +102,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-1.jpg" alt="Game 1"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-1.jpg" alt="Game 1"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
 										<small class="price">$19.00</small>
@@ -115,7 +115,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-2.jpg" alt="Game 2"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-2.jpg" alt="Game 2"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
 										<small class="price">$19.00</small>
@@ -128,7 +128,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-3.jpg" alt="Game 3"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-3.jpg" alt="Game 3"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
 										<small class="price">$19.00</small>
@@ -141,7 +141,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-4.jpg" alt="Game 4"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-4.jpg" alt="Game 4"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
 										<small class="price">$19.00</small>
@@ -166,7 +166,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-5.jpg" alt="Game 1"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-5.jpg" alt="Game 1"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Watch Dogs</a></h3>
 										<small class="price">$19.00</small>
@@ -180,7 +180,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-6.jpg" alt="Game 2"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-6.jpg" alt="Game 2"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Mortal Kombat X</a></h3>
 										<small class="price">$19.00</small>
@@ -194,7 +194,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-7.jpg" alt="Game 3"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-7.jpg" alt="Game 3"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Metal Gear Solid V</a></h3>
 										<small class="price">$19.00</small>
@@ -208,7 +208,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-8.jpg" alt="Game 4"></a>
+											<a href="single.html"><img src="{{ASSETS}}/dummy/game-8.jpg" alt="Game 4"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Nascar '14</a></h3>
 										<small class="price">$19.00</small>
@@ -303,9 +303,11 @@
 				</div> <!-- .column -->
 				<div class="col-md-6">
 					<h2 class="section-title">Create an account</h2>
-					<form action="#">
-						<input type="text" placeholder="Username...">
-						<input type="text" placeholder="Email address...">
+					<form action="{{URL_BASE}}/register" method="POST">
+						<input type="text" placeholder="Usuário..." name="usuario">
+						<input type="password" name="senha">
+						<input type="text" name="CPF">
+						<input type="date" name="nascimento">
 						<input type="submit" value="register">
 					</form>
 				</div> <!-- .column -->
