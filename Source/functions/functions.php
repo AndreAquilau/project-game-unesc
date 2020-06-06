@@ -13,8 +13,11 @@ function loadTemplate(string $view, $data = []){
     //Passe apenas o nome do template é o dados para o template. /$Dev. Andre 25-04-20/
     $twig->addGlobal('URL_BASE', URL_BASE);
     $twig->addGlobal('BASE_CSS', BASE_CSS);
-    $twig->addGlobal('BASE_CSS_BOOTSTRAP', BASE_CSS_BOOTSTRAP);
     $twig->addGlobal('BASE_JAVASCRIPT', BASE_JAVASCRIPT);
+    $twig->addGlobal('BASE_APP', BASE_JAVASCRIPT);
+    $twig->addGlobal('BASE_PLUGIN', BASE_JAVASCRIPT);
+    $twig->addGlobal('BASE_JQUERY', BASE_JAVASCRIPT);
+
     $twig->addGlobal('IMG_LOGO', IMG_LOGO);
 
     //exibe o template
