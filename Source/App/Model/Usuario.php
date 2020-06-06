@@ -115,7 +115,22 @@ class Usuario extends Database
             return false;
         }
 
-        return true;
+        $instance = new Database();
+        $conn = $instance->getInstance();
+
+        $sql =('SELECT * FROM  Usuario WHERE usuario =\''.$this->getUsuario()."'");
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        
+        $dados = $stmt->fetchAll();
+       
+        if(count($dados) === 0){
+            return true;
+        } else{
+            return false;
+        }
+
     }
 
 }
