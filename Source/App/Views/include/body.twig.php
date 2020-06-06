@@ -40,7 +40,9 @@
             </div>
             </div>
     </header>
-    {% block body %} {% endblock %}
+    {% block body %} 
+    
+    {% endblock %}
     <script src="{{BASE_JAVASCRIPT}}"></script>
 </body>
 
