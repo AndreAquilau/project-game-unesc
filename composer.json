@@ -1,0 +1,18 @@
+{
+    "name": "mvc/php",
+    "authors": [
+        {
+            "name": "Andre Aquilau",
+            "email": "Andre.Aquilau@outlook.com"
+        }
+    ],
+    "require": {
+        "coffeecode/router": "^1.0",
+        "twig/twig": "1.37.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "Source/"
+        }
+    }
+}
