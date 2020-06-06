@@ -1,7 +1,7 @@
 <?php
 
 define('URL_BASE','http://localhost/unesc/php_mvc/Projeto-Game/'); //URL do projeto
-define('BASE_CSS', '/php_mvc/Aula06/public/assets/css/styles.css');
+define('BASE_CSS', '/php_mvc/Aula06/public/assets/css/style.css');
 define('BASE_CSS_BOOTSTRAP', '/php_mvc/Aula06/public/assets/css/bootstrap.css');
 define('BASE_JAVASCRIPT', '/php_mvc/Aula06/public/main.js');
 define('IMG_LOGO', '/php_mvc/Aula06/public/assets/img/logo.png');
