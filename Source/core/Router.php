@@ -47,4 +47,8 @@ class Router
         $this->router->post("/register", "RegisterController:postRegister", "RegisterController.postRegister");
     }
 
+    public function getRouter(){
+        return $this->router;
+    }
+
 }

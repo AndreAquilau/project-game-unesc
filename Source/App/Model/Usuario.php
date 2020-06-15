@@ -9,16 +9,19 @@ class Usuario extends Database
 {
     private $usuario;
     private $senha;
+    private $senhaConfirm;
     private $CPF;
     private $dataNascimento;
     private $dataCadastro;
     private $tipo = 'usuário';
     public $errors = [];
+    public $dadosUser;
 
     public function __construct($user = [])
     {
         $this->setUsuario($user['usuario']);
         $this->setSenha($user['senha']);
+        $this->setSenhaConfirm($user['senhaConfirm']);
         $this->setUCPF($user['CPF']);
         $this->setDataNascimento($user['dtNascimento']);
         $this->setDataCadastro();
@@ -43,6 +46,18 @@ class Usuario extends Database
     {
         $this->senha = $senha;
     }
+
+
+    public function getSenhaConfirm()
+    {
+        return $this->senhaConfirm;
+    }
+
+    public function setSenhaConfirm($senha)
+    {
+        $this->senhaConfirm = $senha;
+    }
+
     public function getCPF()
     {
         return $this->CPF;
@@ -89,26 +104,36 @@ class Usuario extends Database
         return;
     }
 
-    static public function login($usuario, $senha)
+    public function login()
     {
+
         $instance = new Database();
         $conn = $instance->getInstance();
+        $usuario = $this->getUsuario();
+        $senha = $this->getSenha();
         $retorno = 'id, usuario, CPF, data_nascimento, estudio, descricao, tipo';
 
-        $sql = ("SELECT $retorno  FROM usuario WHERE usuario = '$usuario' and password = '$senha'");
-
+        $sql = ('SELECT * FROM  Usuario WHERE usuario =\'' . $usuario . "'".' AND '.'password = \'' . $senha . "'");
 
         $stmt = $conn->prepare($sql);
 
-        if ($stmt->execute()) {
-            return $stmt->fetchAll();
+        $stmt->execute();
+
+        $dados = $stmt->fetchAll();
+
+        if ($dados) {
+            $this->dadosUser = $dados;
+            return true;
         } else {
-            return false;
+            array_push($this->errors, "Usuário ou senha inválidos!!!");
         }
     }
 
-    public function validar()
+    public function validarRegistro()
     {
+        if (($this->getsenhaConfirm() !== $this->getsenha()) == 1) {
+            array_push($this->errors, "As senhas estão incorretas!!!");
+        }
 
         if (empty($this->usuario)) {
             array_push($this->errors, "O usuário não está em braco!!!");
@@ -136,7 +161,8 @@ class Usuario extends Database
         if (count($dados) === 0) {
             return true;
         } else {
-            array_push($this->errors, "Usuario já cadastrado!!!");
+            array_push($this->errors, "Usuário já cadastrado!!!");
         }
+        
     }
 }

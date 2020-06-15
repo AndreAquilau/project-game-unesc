@@ -23,7 +23,7 @@
 </div> <!-- .site-header -->
 </div>
 <div class="container register_form">
-  <h2 class="section-title">Create an account</h2>
+  <h2 class="section-title">Criar conta</h2>
   <form action="{{URL_BASE}}register" method="POST" class="">
     <div class="form-group">
       <input type="text" placeholder="Usuário..." name="usuario" required>
@@ -32,7 +32,7 @@
       <input type="password" placeholder="Senha" name="senha" required>
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Senha" name="senha" required>
+      <input type="password" placeholder="Digite a Senha novamente" name="senhaConfirm" required>
     </div>
     <div class="form-group">
       <input type="text" placeholder="CPF" name="CPF" required>
@@ -47,7 +47,7 @@
     {% if MESSAGE %}
     <div class="alert alert-dismissible alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>{{MASSAGE}}</strong>
+      <strong>{{MESSAGE}}</strong>
     </div>
     {% endif %}
 

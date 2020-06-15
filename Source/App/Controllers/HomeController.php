@@ -10,6 +10,9 @@ class HomeController extends Router
     public function getHome($params)
     {
         $params['TITULO'] = "Home";
+
+        print_r($params);
+        
         LoadTemplate("home/main", $params);
     }
 
@@ -21,7 +24,6 @@ class HomeController extends Router
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
         //var_dump(Usuario::login($usuario, $senha));
-        $params['USER'] = Usuario::login($usuario, $senha);
 
         //print_r($params);
         LoadTemplate("home/main", $params);

@@ -18,7 +18,8 @@
 
 			<div class="right-section pull-right">
 				<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-				<a href="#" class="login-button">Login/Register</a>
+				<a href="#" class="login-button">{{USUARIO.usuario}}</a>
+				<a href="{{URL_BASE}}" class="login-button">OutLogin</a>
 			</div> <!-- .right-section -->
 
 			<div class="main-navigation">

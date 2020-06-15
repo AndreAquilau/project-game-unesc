@@ -23,23 +23,26 @@
 </div> <!-- .site-header -->
 </div>
 <div class="container br login_form">
-	<form action="#" class="login">
+	<form action="{{URL_BASE}}" method="POST" class="login">
 		<h2 class="section-title">Login</h2>
 		<div class="form-group">
-			<input type="text" placeholder="Username...">
+			<input type="text" name="usuario" placeholder="Username...">
 		</div>
 		<div class="form-group">
-			<input type="password" placeholder="Password...">
+			<input type="password" name="senha" placeholder="Password...">
 		</div>
 		<div class="form-group form_btn">
 			<input type="submit" value="Login">
 		</div>
 
-		{% if false %}
-		<div class="form-group ">
-			<p>It's a nice day for a walk in the park.</p>
-		</div>
-		{% endif %}
+    {% if ERRORS %}
+    {% for error in ERRORS %}
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{error}}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
 
 	</form><!-- .column -->
 </div>

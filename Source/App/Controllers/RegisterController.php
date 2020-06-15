@@ -25,6 +25,7 @@ class RegisterController
         $input = [
             "usuario"=> $_POST['usuario'],
             "senha"=> $_POST['senha'],
+            "senhaConfirm"=> $_POST['senhaConfirm'],
             "CPF"=> $_POST['CPF'],
             "dtNascimento"=> $_POST['nascimento']
         ];
@@ -33,10 +34,10 @@ class RegisterController
         $user = new Usuario($input);
         $user->getDataCadastro();
 
-        $user->validar();
+        $user->validarRegistro();
 
         $params["ROTA"] = 'POST';
-        
+
         if(count($user->errors) > 0){
             print_r($user->errors);
             $params["ERRORS"] = $user->errors;
@@ -53,7 +54,7 @@ class RegisterController
             return;
         }
 
-        $params["MESSAGE"] = 'Usuario Cadastrado Com Sucesso.';
+        $params["MESSAGE"] = 'Usuário Cadastrado Com Sucesso.';
         LoadTemplate("register/register", $params);
 
         return;
