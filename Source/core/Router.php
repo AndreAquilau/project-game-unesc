@@ -20,9 +20,8 @@ class Router
 
     public function loaderRoutes(){
         self::home();
-        self::login();
-        self::registerget();
-        self::registerpost();
+        self::index();
+        self::register();
     }
 
     //Rotas 
@@ -31,24 +30,21 @@ class Router
     public function home(){
         $this->router->group(null);
         $this->router->namespace("Source\App\Controllers");
-        $this->router->get("/", "HomeController:getHome", "HomeController.getHomer");
+        $this->router->get("/home", "HomeController:getHome", "HomeController.getHomer");
     }
 
-    public function login(){
+    public function index(){
         $this->router->group(null);
         $this->router->namespace("Source\App\Controllers");
-        $this->router->post("/", "HomeController:postHome", "HomeController.postHomer");
+        $this->router->get("/", "IndexController:getIndex", "IndexController.getIndex");
+        $this->router->post("/", "IndexController:postIndex", "IndexController.postIndex");
     }
 
-    public function registerget(){
+    public function register(){
         $this->router->group(null);
         $this->router->namespace("Source\App\Controllers");
         $this->router->get("/register", "RegisterController:getRegister", "RegisterController.getRegister");
-    }
-
-    public function registerpost(){
-        $this->router->group(null);
-        $this->router->namespace("Source\App\Controllers");
         $this->router->post("/register", "RegisterController:postRegister", "RegisterController.postRegister");
     }
+
 }

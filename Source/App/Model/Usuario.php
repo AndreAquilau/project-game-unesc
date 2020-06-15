@@ -76,6 +76,7 @@ class Usuario extends Database
             } else{
                 return false;
             }
+            return;
         } else {
             return false;
         }

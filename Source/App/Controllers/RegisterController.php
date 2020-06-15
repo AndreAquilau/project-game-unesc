@@ -34,8 +34,8 @@ class RegisterController
         $user->getDataCadastro();
         $params["ROTA"] = 'POST';
         $params["MESSAGE"] = $user->registrar();
-
-        LoadTemplate("home/main", $params);
+        
+        LoadTemplate("register/register", $params);
     }
 
 

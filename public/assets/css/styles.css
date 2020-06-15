@@ -1,0 +1,21 @@
+.login_form{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 40%;
+}
+.login_form input{
+  width: 100%;
+}
+
+.form_btn{
+  width: 40%;
+}
+
+.register_form{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 40%;
+}
+.register_form input{
+  width: 100%;
+}

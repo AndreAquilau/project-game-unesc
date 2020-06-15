@@ -309,7 +309,7 @@
 				<input type="text" placeholder="CPF" name="CPF" required>
 				<label>Data de nascimento</label>
 				<input type="date" placeholder="Data de Nascimento" name="nascimento" required>
-				<input type="submit" value="register" required>
+				<input type="submit" value="register">
 			</form>
 		</div> <!-- .column -->
 
