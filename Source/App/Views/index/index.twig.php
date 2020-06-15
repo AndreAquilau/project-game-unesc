@@ -18,22 +18,29 @@
 			<div class="right-section pull-right">
 				<a href="{{URL_BASE}}register" class="login-button">Register</a>
 			</div> <!-- .right-section -->
-			</div> <!-- .main-navigation -->
-		</div> <!-- .container -->
-	</div> <!-- .site-header -->
+		</div> <!-- .main-navigation -->
+	</div> <!-- .container -->
+</div> <!-- .site-header -->
 </div>
-<div class="container login_form">
+<div class="container br login_form">
 	<form action="#" class="login">
 		<h2 class="section-title">Login</h2>
 		<div class="form-group">
-		<input type="text" placeholder="Username...">
+			<input type="text" placeholder="Username...">
 		</div>
 		<div class="form-group">
-		<input type="password" placeholder="Password...">
+			<input type="password" placeholder="Password...">
 		</div>
-	<div class="form-group form_btn">
-	<input type="submit" value="Login">
-	</div>
+		<div class="form-group form_btn">
+			<input type="submit" value="Login">
+		</div>
+
+		{% if false %}
+		<div class="form-group ">
+			<p>It's a nice day for a walk in the park.</p>
+		</div>
+		{% endif %}
+
 	</form><!-- .column -->
 </div>
 

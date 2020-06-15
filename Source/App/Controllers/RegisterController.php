@@ -32,10 +32,31 @@ class RegisterController
 
         $user = new Usuario($input);
         $user->getDataCadastro();
+
+        $user->validar();
+
         $params["ROTA"] = 'POST';
-        $params["MESSAGE"] = $user->registrar();
         
+        if(count($user->errors) > 0){
+            print_r($user->errors);
+            $params["ERRORS"] = $user->errors;
+            LoadTemplate("register/register", $params);
+            return;
+        }
+
+        $user->registrar();
+
+        if(count($user->errors) > 0){
+            print_r($user->errors);
+            $params["ERRORS"] = $user->errors;
+            LoadTemplate("register/register", $params);
+            return;
+        }
+
+        $params["MESSAGE"] = 'Usuario Cadastrado Com Sucesso.';
         LoadTemplate("register/register", $params);
+
+        return;
     }
 
 

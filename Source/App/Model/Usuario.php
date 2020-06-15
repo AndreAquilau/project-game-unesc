@@ -13,125 +13,130 @@ class Usuario extends Database
     private $dataNascimento;
     private $dataCadastro;
     private $tipo = 'usuário';
+    public $errors = [];
 
-    public function __construct($user = []){
+    public function __construct($user = [])
+    {
         $this->setUsuario($user['usuario']);
         $this->setSenha($user['senha']);
         $this->setUCPF($user['CPF']);
         $this->setDataNascimento($user['dtNascimento']);
         $this->setDataCadastro();
-
     }
 
-    public function getUsuario(){
+    public function getUsuario()
+    {
         return $this->usuario;
     }
 
-    public function setUsuario($usuario){
+    public function setUsuario($usuario)
+    {
         $this->usuario = $usuario;
     }
 
-    public function getSenha(){
+    public function getSenha()
+    {
         return $this->senha;
     }
 
-    public function setSenha($senha){
+    public function setSenha($senha)
+    {
         $this->senha = $senha;
     }
-    public function getCPF(){
+    public function getCPF()
+    {
         return $this->CPF;
     }
 
-    public function setUCPF($CPF){
+    public function setUCPF($CPF)
+    {
         $this->CPF = $CPF;
     }
-    public function getDataNascimento(){
+    public function getDataNascimento()
+    {
         return $this->dataNascimento;
     }
 
-    public function setDataNascimento($dataNascimento){
+    public function setDataNascimento($dataNascimento)
+    {
         $this->dataNascimento = $dataNascimento;
     }
 
-    public function getDataCadastro(){
+    public function getDataCadastro()
+    {
         return $this->dataCadastro;
     }
 
-    public function setDataCadastro(){
+    public function setDataCadastro()
+    {
         $data = date('Y-m-d');
-    
+
         $this->dataCadastro = $data;
     }
 
-    public function registrar(){
+    public function registrar()
+    {
         $instance = new Database();
         $conn = $instance->getInstance();
 
-        $sql =('INSERT INTO Usuario(usuario, password,data_nascimento,data_cadastro,CFP,tipo)'.
-        " VALUES('".$this->getUsuario()."', '".$this->getSenha()."', '".$this->getDataNascimento()."', '".$this->getDataCadastro()."', '".$this->getCPF()."', '".$this->tipo."')");
-
-        if($this->validar()){
-            if($conn->exec($sql)){
-                return true;
-            } else{
-                return false;
-            }
-            return;
+        $sql = ('INSERT INTO Usuario(usuario, password,data_nascimento,data_cadastro,CFP,tipo)' .
+            " VALUES('" . $this->getUsuario() . "', '" . $this->getSenha() . "', '" . $this->getDataNascimento() . "', '" . $this->getDataCadastro() . "', '" . $this->getCPF() . "', '" . $this->tipo . "')");
+        if ($conn->exec($sql)) {
+            return true;
         } else {
-            return false;
+            array_push($this->errors, "Error ao cadastra o usuário tente novamente !!!");
         }
-        
+        return;
     }
 
-    static public function login($usuario, $senha){
+    static public function login($usuario, $senha)
+    {
         $instance = new Database();
         $conn = $instance->getInstance();
         $retorno = 'id, usuario, CPF, data_nascimento, estudio, descricao, tipo';
-        
+
         $sql = ("SELECT $retorno  FROM usuario WHERE usuario = '$usuario' and password = '$senha'");
-        
+
 
         $stmt = $conn->prepare($sql);
-   
-        if($stmt->execute()){
+
+        if ($stmt->execute()) {
             return $stmt->fetchAll();
-        } else{
+        } else {
             return false;
         }
-        
     }
 
-    public function validar(){
-   
-        if(empty($this->usuario)){
-            return false;
+    public function validar()
+    {
+
+        if (empty($this->usuario)) {
+            array_push($this->errors, "O usuário não está em braco!!!");
         }
-        if(empty($this->senha)){
-            return false;
+        if (empty($this->senha)) {
+            array_push($this->errors, "A senha não está em braco!!!");
         }
-        if(empty($this->CPF)){
-            return false;
+        if (empty($this->CPF)) {
+            array_push($this->errors, "O CPF não está em braco!!!");
         }
-        if(empty($this->dataNascimento)){
-            return false;
+        if (empty($this->dataNascimento)) {
+            array_push($this->errors, "A data de nascimento não está em braco!!!");
         }
 
         $instance = new Database();
         $conn = $instance->getInstance();
 
-        $sql =('SELECT * FROM  Usuario WHERE usuario =\''.$this->getUsuario()."'");
+        $sql = ('SELECT * FROM  Usuario WHERE usuario =\'' . $this->getUsuario() . "'");
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        
+
         $dados = $stmt->fetchAll();
-       
-        if(count($dados) === 0){
+
+        if (count($dados) === 0) {
             return true;
-        } else{
-            return false;
+        } else {
+            array_push($this->errors, "Usuario já cadastrado!!!");
         }
-
     }
-
 }

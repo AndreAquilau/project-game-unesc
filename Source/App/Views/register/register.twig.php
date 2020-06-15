@@ -24,7 +24,7 @@
 </div>
 <div class="container register_form">
   <h2 class="section-title">Create an account</h2>
-  <form action="{{URL_BASE}}/register" method="POST" class="">
+  <form action="{{URL_BASE}}register" method="POST" class="">
     <div class="form-group">
       <input type="text" placeholder="Usuário..." name="usuario" required>
     </div>
@@ -44,7 +44,21 @@
     <div class="form-group form_btn">
       <input type="submit" value="register">
     </div>
+    {% if MESSAGE %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{MASSAGE}}</strong>
+    </div>
+    {% endif %}
 
+    {% if ERRORS %}
+    {% for error in ERRORS %}
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{error}}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
   </form>
 </div>
 
