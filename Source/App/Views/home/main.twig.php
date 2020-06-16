@@ -15,17 +15,20 @@
 					<small class="site-description">Tagline goes here</small>
 				</div>
 			</a> <!-- #branding -->
-
-			<div class="right-section pull-right">
-				<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-				<a href="#" class="login-button">{{USUARIO.usuario}}</a>
-				<a href="{{URL_BASE}}" class="login-button">OutLogin</a>
-			</div> <!-- .right-section -->
-
+			<form id="formUser">
+				<div class="right-section pull-right">
+					<input type="hidden" name="id" value="{{USUARIO.id}}">
+					<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+					<input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" value="{{USUARIO.usuario}} ">
+					<input type="submit" value="Biblioteca">
+					<input type="submit" value="Add Game">
+					<a href="{{URL_BASE}}">LoginOut</a>
+				</div> <!-- .right-section -->
+			</form>
 			<div class="main-navigation">
 				<button class="toggle-menu"><i class="fa fa-bars"></i></button>
 				<ul class="menu">
-					<li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
+					<li class="menu-item home current-menu-item"><a href="{{URL_BASE}}"><i class="icon-home"></i></a></li>
 					<li class="menu-item"><a href="products.html">Accessories</a></li>
 					<li class="menu-item"><a href="products.html">Promotions</a></li>
 					<li class="menu-item"><a href="products.html">PC</a></li>
@@ -289,5 +292,34 @@
 	</div> <!-- .site-footer -->
 </div>
 
+<div class="overlay"></div>
+
+<div class="auth-popup popup">
+	<a href="#" class="close"><i class="fa fa-times"></i></a>
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="section-title">Login</h2>
+			<form action="#">
+				<input type="text" placeholder="Username...">
+				<input type="password" placeholder="Password...">
+				<input type="submit" value="Login">
+			</form>
+		</div> <!-- .column -->
+		<div class="col-md-6">
+			<h2 class="section-title">Create an account</h2>
+			<form action="{{URL_BASE}}/register" method="POST">
+				<input type="text" placeholder="Usuário..." name="usuario" required>
+				<input type="password" placeholder="Senha" name="senha" required>
+				<input type="text" placeholder="CPF" name="CPF" required>
+				<label>Data de nascimento</label>
+				<input type="date" placeholder="Data de Nascimento" name="nascimento" required>
+				<input type="submit" value="register">
+			</form>
+		</div> <!-- .column -->
+
+
+	</div> <!-- .row -->
+
+</div> <!-- .auth-popup -->
 
 {% endblock %}

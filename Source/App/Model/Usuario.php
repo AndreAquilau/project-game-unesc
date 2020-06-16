@@ -111,7 +111,6 @@ class Usuario extends Database
         $conn = $instance->getInstance();
         $usuario = $this->getUsuario();
         $senha = $this->getSenha();
-        $retorno = 'id, usuario, CPF, data_nascimento, estudio, descricao, tipo';
 
         $sql = ('SELECT * FROM  Usuario WHERE usuario =\'' . $usuario . "'".' AND '.'password = \'' . $senha . "'");
 
@@ -165,4 +164,5 @@ class Usuario extends Database
         }
         
     }
+
 }

@@ -20,3 +20,16 @@
 .register_form input{
   width: 100%;
 }
+
+body #formUser input{
+  background-color: none;
+}
+
+.perfil_form{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 40%;
+}
+.perfil_form input{
+  width: 100%;
+}

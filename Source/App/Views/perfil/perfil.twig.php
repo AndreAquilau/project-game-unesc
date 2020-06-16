@@ -15,34 +15,44 @@
           <small class="site-description">Tagline goes here</small>
         </div>
       </a> <!-- #branding -->
-      <div class="right-section pull-right">
-        <a href="{{URL_BASE}}" class="login-button">Home</a>
-      </div> <!-- .right-section -->
-    </div> <!-- .main-navigation -->
-  </div> <!-- .container -->
-</div> <!-- .site-header -->
+      <form id="formUser">
+        <div class="right-section pull-right">
+          <input type="hidden" name="id" value="{{USUARIO.id}}">
+          <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+          <input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" value="{{USUARIO.usuario}} ">
+          <input type="submit" value="Biblioteca">
+          <input type="submit" value="Add Game">
+          <a href="{{URL_BASE}}">LoginOut</a>
+        </div> <!-- .right-section -->
+      </form>
+    </div>
+  </div>
 </div>
-<div class="container register_form">
-  <h2 class="section-title">Criar conta</h2>
-  <form action="{{URL_BASE}}register" method="POST">
+<div class="container perfil_form">
+  <h2 class="section-title">Altera conta</h2>
+  <form action="{{URL_BASE}}perfil" method="POST">
     <div class="form-group">
-      <input type="text" placeholder="Usuário..." name="usuario" required>
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="id" value="{{USUARIO.id}}">
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Senha" name="senha" required>
+      <input type="text" placeholder="Usuário..." name="usuario" value="{{USUARIO.usuario}}" required>
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Digite a Senha novamente" name="senhaConfirm" required>
+      <input type="password" placeholder="Senha" name="senha" value="{{USUARIO.password}}" required>
     </div>
     <div class="form-group">
-      <input type="text" placeholder="CPF" name="CPF" required>
+      <input type="password" placeholder="Senha" name="senhaConfirm" value="{{USUARIO.password}}" required>
+    </div>
+    <div class="form-group">
+      <input type="text" placeholder="CPF" name="CPF" value="{{USUARIO.cfp}}" required>
     </div>
     <div class="form-group">
       <label>Data de nascimento</label>
-      <input type="date" placeholder="Data de Nascimento" name="nascimento" required>
+      <input type="date" placeholder="Data de Nascimento" name="nascimento" value="{{USUARIO.data_nascimento}}" required>
     </div>
     <div class="form-group form_btn">
-      <input type="submit" value="register">
+      <input type="submit" value="Alterar">
     </div>
     {% if MESSAGE %}
     <div class="alert alert-dismissible alert-success">
