@@ -43,18 +43,27 @@ class Perfil
     $instance = new Database();
     $conn = $instance->getInstance();
   
-    $sql = "UPDATE Usuario SET  usuario = '".$params['usuario']."', password = '".$params['password']."', cfp = '".$params['CPF']."', data_nascimento = '".$params['data_nascimento']."' WHERE id = ".$params['id'];
+    $sql = "UPDATE Usuario SET  usuario = '".$params['usuario']."', password = '".$params['password']."', cfp = '".$params['CPF']."', data_nascimento = '".$params['data_nascimento']."' WHERE id = ".$params['id']." AND password = "."'".$params['password']."'";
   
     echo $sql;
-  
-    $stmt = $conn->prepare($sql);
-  
-    $stmt->execute();
-  
-    $dados = $stmt->fetchAll();
-  
-    return $dados;
 
-  }
+
+      $stmt = $conn->prepare($sql);
+    
+      $stmt->execute();
+         
+      if($stmt->rowCount() > 0){
+        
+        $params['success'] = "Usuário Alterado Com Sucesso!!!";
+        $params["cfp"] = $params["CPF"];
+        return $params;
+      } else {
+        $params['error'] = "Erro as informções são inválidas!!!";
+        $params["cfp"] = $params["CPF"];
+        return $params;
+      }
+
+      return $dados;
+    }
 
 }

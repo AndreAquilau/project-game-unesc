@@ -19,7 +19,7 @@
           <input type="hidden" name="id" value="{{USUARIO.id}}">
           <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
           <input type="submit" formaction="{{URL_BASE}}login" formmethod="POST" value="Home">
-          <input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" value="{{USUARIO.usuario}} ">
+          <input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" form="formUser" value="{{USUARIO.usuario}}">
           <input type="submit" value="Biblioteca">
           <input type="submit" formaction="{{URL_BASE}}game" formmethod="GET" form="formUser" value="Add Game">
           <a href="{{URL_BASE}}">LoginOut</a>
@@ -29,43 +29,74 @@
   </div>
 </div>
 <div class="container perfil_form">
-  <h2 class="section-title">Altera conta</h2>
-  <form action="{{URL_BASE}}perfil" method="POST">
+  <h2 class="section-title">Criar Game</h2>
+  <form action="{{URL_BASE}}game" method="POST">
     <div class="form-group">
-      <input type="hidden" name="_method" value="put">
-      <input type="hidden" name="id" class="id" value="{{USUARIO.id}}">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Usuário..." class="usuario" name="usuario" value="{{USUARIO.usuario}}" required>
+      <input type="hidden" name="usuario" class="id" value="{{USUARIO.usuario}}">
+      <input type="hidden" name="id_usuario" class="id" value="{{USUARIO.id}}">
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Senha" class="senha"  name="senha" required>
+    <div class="form-group">
+      <label for="">Dispositivo</label>
+      <select name="dispositivo" id="dispositivo">
+        <option value="PC">Computador</option>
+        <option value="Play">PlayStation 5</option>
+        <option value="Xbox">Xbox</option>
+        <option value="Wii">Wii</option>
+      </select>
+    </div>
     </div>
     <div class="form-group">
-      <input type="text" placeholder="CPF" name="CPF" class="CPF"  value="{{USUARIO.cfp}}" required>
+      <input type="text" placeholder="Título..." class="titulo" name="titulo" required>
     </div>
     <div class="form-group">
-      <label>Data de nascimento</label>
-      <input type="date" placeholder="Data de Nascimento" class="data_nascimento"  name="data_nascimento" value="{{USUARIO.data_nascimento}}" required>
+    <label for="">Descrição</label>
+      <input type="text" placeholder="Descrição..." class="descricao" name="descricao" required>
     </div>
-    <div class="form-group form_btn">
-      <input type="submit"  value="Alterar">
+    <div class="form-group">
+      <label for="">URL Download</label>
+      <input type="text" placeholder="Url de download..." class="dowload_url" name="dowload_url" required>
     </div>
-    {% if USUARIO.success %}
-    <div class="alert alert-dismissible alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>{{USUARIO.success}}</strong>
+    <label>Selecione a Thumbnail</label>
+    <div class="form-group" style="margin-bottom: 5%;">
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%; margin-left: 2.5%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-1.jpg">
+        <img src="{{ASSETS}}/dummy/game-1.jpg" style="max-height: 20vh">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-2.jpg">
+        <img src="{{ASSETS}}/dummy/game-2.jpg" style="max-height: 20vh; ">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-3.jpg">
+        <img src="{{ASSETS}}/dummy/game-3.jpg" style="max-height: 20vh;">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-4.jpg">
+        <img src="{{ASSETS}}/dummy/game-4.jpg" style="max-height: 20vh;">
+      </label>
     </div>
-    {% endif %}
-
-    {% if USUARIO.error%}
-
-    <div class="alert alert-dismissible alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>{{USUARIO.error}}</strong>
+    <div class="form-group" style="margin-bottom: 5%;">
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%; margin-left: 2.5%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-5.jpg">
+        <img src="{{ASSETS}}/dummy/game-5.jpg" style="max-height: 20vh">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-6.jpg">
+        <img src="{{ASSETS}}/dummy/game-6.jpg" style="max-height: 20vh; ">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-7.jpg">
+        <img src="{{ASSETS}}/dummy/game-7.jpg" style="max-height: 20vh;">
+      </label>
+      <label style="max-width: 20%; max-height: 20vh; margin-right: 3%;">
+        <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-8.jpg">
+        <img src="{{ASSETS}}/dummy/game-8.jpg" style="max-height: 20vh;">
+      </label>
     </div>
-
-    {% endif %}
+    <div class="form-group">
+      <input type="submit"  value="Criar">
+    </div>
   </form>
 </div>
 

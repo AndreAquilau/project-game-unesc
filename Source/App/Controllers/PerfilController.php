@@ -15,13 +15,9 @@ class PerfilController
         $user = new Perfil($_GET['id'], $_GET['usuario']);
 
         $params["TITULO"] = "Perfil";
-        $params["MESSAGE"] = '';
         $params["ROTA"] = 'GET';
         $dados = json_encode($user->getPerfil());
         $params["USUARIO"] = json_decode($dados, true);
-
-        echo print_r($params["USUARIO"]);
-
         LoadTemplate("perfil/perfil", $params);
 
     }
@@ -35,15 +31,16 @@ class PerfilController
             $user = new Perfil($_POST['id'], $_POST['usuario']);
             $params["TITULO"] = "Perfil";
             $params["MESSAGE"] = '';
-            $user->putPerfil([
+            $dados = json_encode($user->putPerfil([
                 "usuario" => $_POST['usuario'],
                 "password" => $_POST['senha'],
                 "CPF" => $_POST['CPF'],
                 "data_nascimento" => $_POST['data_nascimento'],
                 "id" => $_POST['id']
-            ]);
-            $dados = json_encode($user->getPerfil());
-            $params["USUARIO"] = json_decode($dados, true);
+            ]),  JSON_UNESCAPED_UNICODE);
+            //$dados = json_encode($user->getPerfil());
+            $params["USUARIO"] = json_decode($dados,  false, 512, JSON_UNESCAPED_UNICODE);
+            print_r($dados);
             LoadTemplate("perfil/perfil", $params);
 
     }

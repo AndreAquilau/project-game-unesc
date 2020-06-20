@@ -13,7 +13,7 @@ class Usuario extends Database
     private $CPF;
     private $dataNascimento;
     private $dataCadastro;
-    private $tipo = 'usuário';
+    //private $tipo = 'usuário';
     public $errors = [];
     public $dadosUser;
 
@@ -94,8 +94,10 @@ class Usuario extends Database
         $instance = new Database();
         $conn = $instance->getInstance();
 
-        $sql = ('INSERT INTO Usuario(usuario, password,data_nascimento,data_cadastro,CFP,tipo)' .
-            " VALUES('" . $this->getUsuario() . "', '" . $this->getSenha() . "', '" . $this->getDataNascimento() . "', '" . $this->getDataCadastro() . "', '" . $this->getCPF() . "', '" . $this->tipo . "')");
+        $sql = ('INSERT INTO Usuario(usuario, password,data_nascimento,data_cadastro,cfp)' .
+            " VALUES('" . $this->getUsuario() . "', '" . $this->getSenha() . "', '" . $this->getDataNascimento() . "', '" . $this->getDataCadastro() . "', '" . $this->getCPF() . "')");
+
+            echo $sql;
         if ($conn->exec($sql)) {
             return true;
         } else {

@@ -20,7 +20,7 @@
 					<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
 					<input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" value="{{USUARIO.usuario}} ">
 					<input type="submit" value="Biblioteca">
-					<input type="submit" value="Add Game">
+					<input type="submit" formaction="{{URL_BASE}}game" formmethod="GET" form="formUser" value="Add Game">
 					<a href="{{URL_BASE}}">LoginOut</a>
 				</div> <!-- .right-section -->
 			</form>
@@ -105,7 +105,7 @@
 						<div class="product">
 							<div class="inner-product">
 								<div class="figure-image">
-									<a href="single.html"><img src="{{ASSETS}}/dummy/game-1.jpg" alt="Game 1"></a>
+									<a href="single.html"><img src="https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png" alt="Game 1"></a>
 								</div>
 								<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
 								<small class="price">$19.00</small>

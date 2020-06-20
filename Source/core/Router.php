@@ -24,6 +24,7 @@ class Router
         self::register();
         self::login();
         self::perfil();
+        self::game();
     }
 
     //Rotas 
@@ -59,6 +60,21 @@ class Router
         $this->router->post("/perfil", "PerfilController:putPerfil", "PerfilController.putPerfil");
 
     }
+
+    public function game(){
+        $this->router->namespace("Source\App\Controllers");
+        $this->router->get("/game", "GameController:getGame", "GameController.getGame");
+        $this->router->post("/game", "GameController:postGame", "GameController.postGame");
+
+    }
+
+    public function biblioteca(){
+        $this->router->namespace("Source\App\Controllers");
+        $this->router->get("/biblioteca", "BibliotecaController:getBiblioteca", "BibliotecaController.getBiblioteca");
+        $this->router->get("/biblioteca", "BibliotecaController:postBiblioteca", "BibliotecaController.postBiblioteca");
+        $this->router->get("/biblioteca", "BibliotecaController:deleteBiblioteca", "BibliotecaController.deleteBiblioteca");
+    }
+
 
     public function getRouter(){
         return $this->router;

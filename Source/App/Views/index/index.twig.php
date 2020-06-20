@@ -88,6 +88,8 @@
 		</ul> <!-- .slides -->
 	</div> <!-- .home-slider -->
 
+	
+
 	<main class="main-content">
 		<div class="container">
 			<div class="page">
@@ -104,7 +106,7 @@
 									<a href="single.html"><img src="{{ASSETS}}/dummy/game-1.jpg" alt="Game 1"></a>
 								</div>
 								<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
-								<small class="price">$19.00</small>
+								<small class="price">R$19.00</small>
 								<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
 								<a href="cart.html" class="button">Add to cart</a>
 								<a href="#" class="button muted">Read Details</a>
