@@ -1,12 +1,13 @@
 <?php
 
-define('URL_BASE','http://localhost:8080/php_mvc/Projeto-Game/'); //URL do projeto
+define('URL_BASE','http://localhost:8080/Projeto-Game/'); //URL do projeto
 define('BASE_CSS', 'public/assets/css/style.css');
 define('STYLES_CSS', 'public/assets/css/styles.css');
 define('BASE_JAVASCRIPT', 'public/main.js');
 define('APP_JAVASCRIPT', 'public/assets/js/app.js');
 define('JQUERY_JAVASCRIPT', 'public/assets/js/jquery-1.11.1.min.js');
 define('PLUGIN_JAVASCRIPT', 'public/assets/js/plugins.js');
+define('ALTERA_JAVASCRIPT', 'public/assets/js/altera.js');
 define('ASSETS', 'public/assets');
 
 /*

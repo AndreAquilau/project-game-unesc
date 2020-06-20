@@ -9,14 +9,18 @@ class PerfilController
 {
     
 
-    public function getPerfil($params)
+    public function getPerfil()
     {
+
         $user = new Perfil($_GET['id'], $_GET['usuario']);
 
         $params["TITULO"] = "Perfil";
         $params["MESSAGE"] = '';
         $params["ROTA"] = 'GET';
-        $params["USUARIO"] = $user->getPerfil();
+        $dados = json_encode($user->getPerfil());
+        $params["USUARIO"] = json_decode($dados, true);
+
+        echo print_r($params["USUARIO"]);
 
         LoadTemplate("perfil/perfil", $params);
 
@@ -24,27 +28,44 @@ class PerfilController
 
     public function putPerfil($params)
     {
-        $_PUT = array();
-        parse_str(file_get_contents('php://input'), $_PUT);
 
-        $user = new Perfil();
-        echo "PUT PERFIL";
-        $params["TITULO"] = "Perfil";
-        $params["MESSAGE"] = '';
-        $params["ROTA"] = 'PUT';
-        $params["USUARIO"] = $user->putPerfil($input = 
-        [
-            "id" => $_PUT['id'],
-            "usuario"=> $_PUT['usuario'],
-            "senha"=> $_PUT['senha'],
-            "senhaConfirm"=> $_PUT['senhaConfirm'],
-            "CPF"=> $_PUT['CPF'],
-            "dtNascimento"=> $_PUT['nascimento']
-        ]);
 
-        LoadTemplate("perfil/perfil", $params);
+             //$params["USUARIO"] = $user->getPerfil();
+
+            $user = new Perfil($_POST['id'], $_POST['usuario']);
+            $params["TITULO"] = "Perfil";
+            $params["MESSAGE"] = '';
+            $user->putPerfil([
+                "usuario" => $_POST['usuario'],
+                "password" => $_POST['senha'],
+                "CPF" => $_POST['CPF'],
+                "data_nascimento" => $_POST['data_nascimento'],
+                "id" => $_POST['id']
+            ]);
+            $dados = json_encode($user->getPerfil());
+            $params["USUARIO"] = json_decode($dados, true);
+            LoadTemplate("perfil/perfil", $params);
 
     }
 
 
+
+    public function deletePerfil($params)
+    {
+
+             //$params["USUARIO"] = $user->getPerfil();
+
+            $user = new Perfil($_POST['id'], $_POST['usuario']);
+            $user->deletePerfil([
+                "usuario" => $_POST['usuario'],
+                "CPF" => $_POST['CPF'],
+                "id" => $_POST['id']
+            ]);
+            $params["TITULO"] = "Company Game";
+            LoadTemplate("index/index", $params);
+
+    }
+
 }
+
+

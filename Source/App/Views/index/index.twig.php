@@ -8,14 +8,12 @@
 <div id="site-content">
 	<div class="site-header">
 		<div class="container">
-			<a href="{{URL_BASE}}" id="branding">
+		<div id="branding">
 				<img src="{{ASSETS}}/img/logo.png" alt="" class="logo">
 				<div class="logo-text">
 					<h1 class="site-title">Company name</h1>
-					<small class="site-description">Tagline goes here</small>
 				</div>
-			</a> <!-- #branding -->
-
+		</div>
 			<div class="right-section pull-right">
 				<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
         <a href="{{URL_BASE}}login" class="login-button">Login</a>

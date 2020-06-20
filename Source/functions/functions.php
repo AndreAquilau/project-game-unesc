@@ -17,6 +17,7 @@ function loadTemplate(string $view, $data = []){
     $twig->addGlobal('BASE_JAVASCRIPT', BASE_JAVASCRIPT);
     $twig->addGlobal('APP', APP_JAVASCRIPT);
     $twig->addGlobal('PLUGIN', PLUGIN_JAVASCRIPT);
+    $twig->addGlobal('PERFIL', ALTERA_JAVASCRIPT);
     $twig->addGlobal('JQUERY', JQUERY_JAVASCRIPT);
 
     $twig->addGlobal('ASSETS', ASSETS);

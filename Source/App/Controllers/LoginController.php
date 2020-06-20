@@ -5,6 +5,7 @@ namespace Source\App\Controllers;
 
 use Source\App\Model\Usuario;
 use Source\core\Router;
+use Source\App\Model\Perfil;
 
 class LoginController extends Router
 {
@@ -19,6 +20,19 @@ class LoginController extends Router
     public function postLogin($params)
     {
         $params["TITULO"] = "Company Game";
+
+
+        if(!empty($_POST['usuario']) && !empty($_POST['id'])){
+
+            $user = new Perfil($_POST['id'], $_POST['usuario']);
+            $dados = json_encode($user->getPerfil());
+            $params["USUARIO"] = json_decode($dados, true);
+
+            print_r($params);
+            LoadTemplate("home/main", $params);
+            return;
+        }
+
         $input = [
             "usuario"=> $_POST['usuario'],
             "senha"=> $_POST['senha'],
@@ -38,11 +52,11 @@ class LoginController extends Router
             return;
         }
 
-        $dados = $user->dadosUser;
+        $dados = json_encode($user->dadosUser[0]);
+        $dados = json_decode($dados, true);
 
-        $params['USUARIO'] = $dados[0];
+        $params["USUARIO"] = $dados;
         
-        //parent::getRouter()->redirect('/home', $dados);
         LoadTemplate("home/main", $params);
        
     }

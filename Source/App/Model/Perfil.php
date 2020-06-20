@@ -16,7 +16,7 @@ class Perfil
   }
 
 
-  public function perfil()
+  public function getPerfil()
   {
 
     $instance = new Database();
@@ -38,22 +38,22 @@ class Perfil
 
   }
 
-  public function putPerfil($params){
+  public function putPerfil($params) {
   
-  $instance = new Database();
-  $conn = $instance->getInstance();
-
-  $sql = ("UPDATE Usuario SET  usuario = \'".$params['usuario']."', password = '".$params['password'])."', cfp = '".$params['CPF']."', data_nascimento = '".$params['data_nascimento']."' WHERE id = ".$params['id'];
-
-  echo $sql;
-
-  $stmt = $conn->prepare($sql);
-
-  $stmt->execute();
-
-  $dados = $stmt->fetchAll();
-
-  return $dados[0];
+    $instance = new Database();
+    $conn = $instance->getInstance();
+  
+    $sql = "UPDATE Usuario SET  usuario = '".$params['usuario']."', password = '".$params['password']."', cfp = '".$params['CPF']."', data_nascimento = '".$params['data_nascimento']."' WHERE id = ".$params['id'];
+  
+    echo $sql;
+  
+    $stmt = $conn->prepare($sql);
+  
+    $stmt->execute();
+  
+    $dados = $stmt->fetchAll();
+  
+    return $dados;
 
   }
 
