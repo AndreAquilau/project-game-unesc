@@ -25,6 +25,7 @@ class Router
         self::login();
         self::perfil();
         self::game();
+        self::biblioteca();
     }
 
     //Rotas 
@@ -71,8 +72,8 @@ class Router
     public function biblioteca(){
         $this->router->namespace("Source\App\Controllers");
         $this->router->get("/biblioteca", "BibliotecaController:getBiblioteca", "BibliotecaController.getBiblioteca");
-        $this->router->get("/biblioteca", "BibliotecaController:postBiblioteca", "BibliotecaController.postBiblioteca");
-        $this->router->get("/biblioteca", "BibliotecaController:deleteBiblioteca", "BibliotecaController.deleteBiblioteca");
+        $this->router->post("/biblioteca", "BibliotecaControllerBibliotecaController :postBiblioteca", "BibliotecaController.postBiblioteca");
+        $this->router->delete("/biblioteca", "BibliotecaController:deleteBiblioteca", "BibliotecaController.deleteBiblioteca");
     }
 
 

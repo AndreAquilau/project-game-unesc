@@ -19,7 +19,7 @@
 					<input type="hidden" name="id" value="{{USUARIO.id}}">
 					<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
 					<input type="submit" formaction="{{URL_BASE}}perfil" formmethod="GET" value="{{USUARIO.usuario}} ">
-					<input type="submit" value="Biblioteca">
+					<input type="submit" formaction="{{URL_BASE}}biblioteca" formmethod="GET" form="formUser" value="Biblioteca">
 					<input type="submit" formaction="{{URL_BASE}}game" formmethod="GET" form="formUser" value="Add Game">
 					<a href="{{URL_BASE}}">LoginOut</a>
 				</div> <!-- .right-section -->

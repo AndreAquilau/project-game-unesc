@@ -3,25 +3,31 @@
 namespace Source\App\Controllers;
 
 use Source\App\Model\Perfil;
-use Source\App\Model\Game;
+use Source\App\Model\Biblioteca;
 
-class GameController 
+class BibliotecaController 
 {
     
 
-    public function getGame()
+    public function getBiblioteca()
     {
-
         $user = new Perfil($_GET['id'], $_GET['usuario']);
+        $jogos = new Biblioteca();
 
-        $params["TITULO"] = "Game Add";
+        $res = json_encode($jogos->getBiblioteca($_GET['id'], $_GET['usuario']), JSON_UNESCAPED_UNICODE);
+        $params["TITULO"] = "Biblioteca";
         $params["ROTA"] = 'GET';
         $dados = json_encode($user->getPerfil());
         $params["USUARIO"] = json_decode($dados, true);
+        $params["GAME"] = json_decode($res,  true);
+
+        print_r($params);
+
         LoadTemplate("biblioteca/biblioteca", $params);
+
     }
 
-    public function postGame($params)
+    public function postBiblioteca($params)
     {
 
         $game = new Game();
@@ -48,7 +54,7 @@ class GameController
     }
 
 
-    public function putGame($params)
+    public function putBiblioteca($params)
     {
 
 
@@ -57,7 +63,7 @@ class GameController
 
 
 
-    public function deleteGame($params)
+    public function deleteBiblioteca($params)
     {
 
            
