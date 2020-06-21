@@ -2,6 +2,25 @@
 
 {%block head%}
 <title>{{TITULO}}</title>
+<style>
+/* HIDE RADIO */
+.hiddenradio [type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+.hiddenradio [type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+.hiddenradio [type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
+</style>
 {%endblock%}
 
 {% block body %}
@@ -58,7 +77,7 @@
       <input type="text" placeholder="Url de download..." class="dowload_url" name="dowload_url" required>
     </div>
     <label>Selecione a Thumbnail</label>
-    <div class="form-group" style="margin-bottom: 5%;">
+    <div class="hiddenradio" style="margin-bottom: 5%;">
       <label style="max-width: 20%; max-height: 20vh; margin-right: 3%; margin-left: 2.5%;">
         <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-1.jpg">
         <img src="{{ASSETS}}/dummy/game-1.jpg" style="max-height: 20vh">
@@ -76,7 +95,7 @@
         <img src="{{ASSETS}}/dummy/game-4.jpg" style="max-height: 20vh;">
       </label>
     </div>
-    <div class="form-group" style="margin-bottom: 5%;">
+    <div class="hiddenradio" style="margin-bottom: 5%;">
       <label style="max-width: 20%; max-height: 20vh; margin-right: 3%; margin-left: 2.5%;">
         <input type="radio" name="thumb_url" value="{{ASSETS}}/dummy/game-5.jpg">
         <img src="{{ASSETS}}/dummy/game-5.jpg" style="max-height: 20vh">
