@@ -18,7 +18,7 @@
 
 /* CHECKED STYLES */
 .hiddenradio [type=radio]:checked + img {
-  outline: 2px solid #f00;
+  outline: 4px solid green;
 }
 </style>
 {%endblock%}
