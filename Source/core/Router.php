@@ -73,7 +73,7 @@ class Router
         $this->router->namespace("Source\App\Controllers");
         $this->router->get("/biblioteca", "BibliotecaController:getBiblioteca", "BibliotecaController.getBiblioteca");
         $this->router->post("/biblioteca", "BibliotecaControllerBibliotecaController :postBiblioteca", "BibliotecaController.postBiblioteca");
-        $this->router->delete("/biblioteca", "BibliotecaController:deleteBiblioteca", "BibliotecaController.deleteBiblioteca");
+        $this->router->get("/viewGame", "BibliotecaController:viewGame", "BibliotecaController.viewGame");
     }
 
 

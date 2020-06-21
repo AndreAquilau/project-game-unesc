@@ -46,11 +46,11 @@
                 
                 {% for row in GAME%}
                 <tr>
-                
-                <form id="{{row.id_jogo}}">  
                   <td class="product-name" >
                     <div class="form-group">
                       <input type="hidden" name="id_jogo" value="{{row.id_jogo}}">
+                      <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+                      <input type="hidden" name="id" value="{{row.id_usuario}}">
                     </div>
                     <div class="product-thumbnail" style="width: 60px;">
                       <img src="{{row.thumb_url}}" style="width: 60px;" alt="">
@@ -62,14 +62,29 @@
                   </td>
                   <td class="product-price">R$00.00</td>
                     <td class="product-qty">
-                    <input type="submit" value="Visualizar">
+                      <form>
+                            <input type="hidden" name="id_jogo" value="{{row.id_jogo}}">
+                            <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+                            <input type="hidden" name="id" value="{{row.id_usuario}}">
+                            <input type="submit" formaction="{{URL_BASE}}viewGame" formmethod="GET" value="Visualizar">
+                      </form>   
                   </td>
                   <td class="product-total"><a href="{{row.dowload_url}}" target="_blank" rel="noopener noreferrer">Download</a></td>
-                  <td class="action"><input type="submit" value="Deletar"></td>
-                </form>
-                
+                  
+                  <td class="action">
+                    <div>
+                      <form>
+                        <input type="hidden" name="id" value="{{row.id_usuario}}">
+                        <input type="hidden" name="id_jogo" value="{{row.id_jogo}}">
+                        <input type="hidden" name="id_usuario" value="{{row.id_usuario}}">
+                        <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Remover" formaction="{{URL_BASE}}biblioteca"  >
+                      </form>
+                    </div>
+                  </td>   
               </tr>
-                {% endfor %}
+              {% endfor %}
           </tbody>
                     
       </table>

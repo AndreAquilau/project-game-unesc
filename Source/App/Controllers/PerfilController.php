@@ -40,7 +40,7 @@ class PerfilController
             ]),  JSON_UNESCAPED_UNICODE);
             //$dados = json_encode($user->getPerfil());
             $params["USUARIO"] = json_decode($dados,  false, 512, JSON_UNESCAPED_UNICODE);
-            print_r($dados);
+            //print_r($dados);
             LoadTemplate("perfil/perfil", $params);
 
     }

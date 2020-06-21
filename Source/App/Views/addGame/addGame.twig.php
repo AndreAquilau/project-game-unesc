@@ -116,6 +116,21 @@
     <div class="form-group">
       <input type="submit"  value="Criar">
     </div>
+    {% if GAME.success %}
+    <div class="alert alert-dismissible alert-success" style="text-align: center">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{GAME.success}}</strong>
+    </div>
+    {% endif %}
+
+    {% if GAME.errors %}
+    {% for error in GAME.errors %}
+    <div class="alert alert-dismissible alert-danger" style="text-align: center">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{error}}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
   </form>
 </div>
 

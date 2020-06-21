@@ -97,7 +97,7 @@ class Usuario extends Database
         $sql = ('INSERT INTO Usuario(usuario, password,data_nascimento,data_cadastro,cfp)' .
             " VALUES('" . $this->getUsuario() . "', '" . $this->getSenha() . "', '" . $this->getDataNascimento() . "', '" . $this->getDataCadastro() . "', '" . $this->getCPF() . "')");
 
-            echo $sql;
+            //echo $sql;
         if ($conn->exec($sql)) {
             return true;
         } else {

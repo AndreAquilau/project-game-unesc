@@ -27,7 +27,7 @@ class Perfil
 
     $sql = ('SELECT * FROM  Usuario WHERE usuario =\'' . $usuario . "'" . ' AND ' . 'id = \'' . $id . "'");
 
-    echo $sql;
+    //echo $sql;
     $stmt = $conn->prepare($sql);
 
     $stmt->execute();
@@ -45,7 +45,7 @@ class Perfil
   
     $sql = "UPDATE Usuario SET  usuario = '".$params['usuario']."', password = '".$params['password']."', cfp = '".$params['CPF']."', data_nascimento = '".$params['data_nascimento']."' WHERE id = ".$params['id']." AND password = "."'".$params['password']."'";
   
-    echo $sql;
+    //echo $sql;
 
 
       $stmt = $conn->prepare($sql);

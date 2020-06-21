@@ -9,10 +9,28 @@ class BibliotecaController
 {
     
 
-    public function getBiblioteca()
+    public function getBiblioteca($res)
     {
         $user = new Perfil($_GET['id'], $_GET['usuario']);
         $jogos = new Biblioteca();
+
+        if(isset($_GET['_method'])){
+  
+            $jogos->deleteGame( $_GET["id_usuario"], $_GET["id_jogo"]);
+            $res = json_encode($jogos->getBiblioteca($_GET["id_usuario"], $_GET['usuario']), JSON_UNESCAPED_UNICODE);
+            $params["TITULO"] = "Biblioteca";
+            $params["ROTA"] = 'GET';
+            $dados = json_encode($user->getPerfil());
+            $params["USUARIO"] = json_decode($dados, true);
+            $params["GAME"] = json_decode($res,  true);
+    
+            //print_r($params);
+    
+            LoadTemplate("biblioteca/biblioteca", $params);
+
+            return;
+        }
+
 
         $res = json_encode($jogos->getBiblioteca($_GET['id'], $_GET['usuario']), JSON_UNESCAPED_UNICODE);
         $params["TITULO"] = "Biblioteca";
@@ -21,7 +39,7 @@ class BibliotecaController
         $params["USUARIO"] = json_decode($dados, true);
         $params["GAME"] = json_decode($res,  true);
 
-        print_r($params);
+        //print_r($params);
 
         LoadTemplate("biblioteca/biblioteca", $params);
 
@@ -53,21 +71,21 @@ class BibliotecaController
 
     }
 
-
-    public function putBiblioteca($params)
+    public function viewGame($params)
     {
+        $jogos = new Biblioteca();
 
+        $res = json_encode($jogos->viewGame($_GET['id_jogo'], $_GET['id'], $_GET['usuario']), JSON_UNESCAPED_UNICODE);
 
-
+        $user = new Perfil($_GET['id'], $_GET['usuario']);
+        $params["TITULO"] = "View Game";
+        $dados = json_encode($user->getPerfil());
+        $params["USUARIO"] = json_decode($dados, true);
+        $params["GAME"] = json_decode($res,  true);
+        print_r($params["GAME"]);
+        LoadTemplate("viewGame/viewGame", $params);
     }
 
-
-
-    public function deleteBiblioteca($params)
-    {
-
-           
-
-    }
+    
 
 }

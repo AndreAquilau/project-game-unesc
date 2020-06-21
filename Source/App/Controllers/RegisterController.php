@@ -39,7 +39,7 @@ class RegisterController
         $params["ROTA"] = 'POST';
 
         if(count($user->errors) > 0){
-            print_r($user->errors);
+            //print_r($user->errors);
             $params["ERRORS"] = $user->errors;
             LoadTemplate("register/register", $params);
             return;
@@ -48,7 +48,7 @@ class RegisterController
         $user->registrar();
 
         if(count($user->errors) > 0){
-            print_r($user->errors);
+            //print_r($user->errors);
             $params["ERRORS"] = $user->errors;
             LoadTemplate("register/register", $params);
             return;

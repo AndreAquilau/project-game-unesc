@@ -45,19 +45,17 @@
 		</div> <!-- .container -->
 	</div> <!-- .site-header -->
 
-	<div class="home-slider">
-		<ul class="slides">
+
+	<div class="home-slider" >
+		<ul class="slides" style="position: relative; color: #f5f5f5" >
 			<li data-bg-image="{{ASSETS}}/dummy/slide-1.jpg">
 				<div class="container">
 					<div class="slide-content">
 						<h2 class="slide-title">Kill Zone 3</h2>
 						<small class="slide-subtitle">$190.00</small>
-
 						<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-
 						<a href="cart.html" class="button">Add to cart</a>
 					</div>
-
 					<img src="{{ASSETS}}/dummy/game-cover-1.jpg" class="slide-image">
 				</div>
 			</li>
@@ -66,27 +64,21 @@
 					<div class="slide-content">
 						<h2 class="slide-title">Kill Zone 3</h2>
 						<small class="slide-subtitle">$190.00</small>
-
 						<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-
 						<a href="cart.html" class="button">Add to cart</a>
 					</div>
-
-					<img src="/{{ASSETS}}/dummy/game-cover-2.jpg" class="slide-image">
+					<img src="{{ASSETS}}/dummy/game-cover-2.jpg" class="slide-image">
 				</div>
 			</li>
 			<li data-bg-image="{{ASSETS}}/dummy/slide-3.jpg">
 				<div class="container">
 					<div class="slide-content">
 						<h2 class="slide-title">Kill Zone 3</h2>
-						<small class="slide-subtitle">$190.00</small>
-
+						<small class="slide-subtitle">$190.00</small>	
 						<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-
 						<a href="cart.html" class="button">Add to cart</a>
 					</div>
-
-					<img src="dummy/game-cover-3.jpg" class="slide-image">
+					<img src="{{ASSETS}}/dummy/game-cover-3.jpg" class="slide-image">
 				</div>
 			</li>
 		</ul> <!-- .slides -->
