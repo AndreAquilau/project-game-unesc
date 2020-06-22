@@ -5,10 +5,11 @@ namespace Source\App\Controllers;
 
 use Source\App\Model\Perfil;
 
+/*  Classe está herdando os métodos de Router*/
 class PerfilController 
 {
     
-
+    /* Função publica que exibe a página de perfil do usuário */
     public function getPerfil()
     {
 
@@ -18,10 +19,12 @@ class PerfilController
         $params["ROTA"] = 'GET';
         $dados = json_encode($user->getPerfil());
         $params["USUARIO"] = json_decode($dados, true);
+        // Carrega a página de perfil e envia os dados do usuário logal
         LoadTemplate("perfil/perfil", $params);
 
     }
 
+    // Altera os dados da página de perfil
     public function putPerfil($params)
     {
 
@@ -46,7 +49,7 @@ class PerfilController
     }
 
 
-
+    /* Deleta o perfil do usuário */
     public function deletePerfil($params)
     {
 

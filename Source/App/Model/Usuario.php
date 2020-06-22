@@ -4,9 +4,11 @@ namespace Source\App\Model;
 
 
 use Source\db\Database;
+/*  Classe está herdando os métodos de database*/
 
 class Usuario extends Database
 {
+    /* Atributos definidos como privado */
     private $usuario;
     private $senha;
     private $senhaConfirm;
@@ -17,6 +19,7 @@ class Usuario extends Database
     public $errors = [];
     public $dadosUser;
 
+      /* Função pública construtora para atribuir os dados encapsulados da classe */
     public function __construct($user = [])
     {
         $this->setUsuario($user['usuario']);
@@ -26,62 +29,73 @@ class Usuario extends Database
         $this->setDataNascimento($user['dtNascimento']);
         $this->setDataCadastro();
     }
-
+    /* Função publica para retornar usuário */
     public function getUsuario()
     {
         return $this->usuario;
     }
 
+    /* Função publica para definir usuário */
     public function setUsuario($usuario)
     {
         $this->usuario = $usuario;
     }
 
+     /* Função publica para retornar senha*/
     public function getSenha()
     {
         return $this->senha;
     }
 
+     /* Função publica para definir senha*/
     public function setSenha($senha)
     {
         $this->senha = $senha;
     }
 
-
+     /* Função publica para retornar a confirmação da senha*/
     public function getSenhaConfirm()
     {
         return $this->senhaConfirm;
     }
 
+     /* Função publica para definir a confirmação da senha*/
     public function setSenhaConfirm($senha)
     {
         $this->senhaConfirm = $senha;
     }
 
+     /* Função publica para pegar cpf */
     public function getCPF()
     {
         return $this->CPF;
     }
 
+     /* Função publica para definir o cpf*/
     public function setUCPF($CPF)
     {
         $this->CPF = $CPF;
     }
+
+     /* Função publica para retornar a data de nascimento*/
     public function getDataNascimento()
     {
         return $this->dataNascimento;
     }
 
+     /* Função publica para definir data de nascimento*/
     public function setDataNascimento($dataNascimento)
     {
         $this->dataNascimento = $dataNascimento;
     }
 
+    /* Função publica para retornar a data de cadastro*/
     public function getDataCadastro()
     {
         return $this->dataCadastro;
     }
 
+    /* Função publica para pegar data de cadastro formatada*/
     public function setDataCadastro()
     {
         $data = date('Y-m-d');
@@ -89,6 +103,7 @@ class Usuario extends Database
         $this->dataCadastro = $data;
     }
 
+    /* Função publica para executar a query sql e inserir um novo usuário ao banco de dados */
     public function registrar()
     {
         $instance = new Database();
@@ -106,6 +121,7 @@ class Usuario extends Database
         return;
     }
 
+    /* Função publica responsável por executar a query e retornar possui o usuário registrado no banco de dados */ 
     public function login()
     {
 
@@ -130,6 +146,7 @@ class Usuario extends Database
         }
     }
 
+    /* Função publica para validar se os dados do formulário de cadastro estão corretos*/
     public function validarRegistro()
     {
         if (($this->getsenhaConfirm() !== $this->getsenha()) == 1) {

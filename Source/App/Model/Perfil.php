@@ -3,7 +3,7 @@
 namespace Source\App\Model;
 
 use Source\db\Database;
-
+/* Classe que representa o Perfil do usuario*/
 class Perfil
 {
   private $id;
@@ -15,7 +15,7 @@ class Perfil
     $this->usuario = $usuario;
   }
 
-
+/* Função publica que executa a query do banco de dados para buscar os dados do perfil do usuario*/
   public function getPerfil()
   {
 
@@ -37,6 +37,7 @@ class Perfil
     return $dados[0];
 
   }
+/* Função publica que executa a query do banco de dados para alterar algum dado do perfil do usuario*/
 
   public function putPerfil($params) {
   

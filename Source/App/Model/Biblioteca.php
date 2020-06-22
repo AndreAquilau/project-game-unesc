@@ -6,13 +6,13 @@ use Source\db\Database;
 
 class Biblioteca
 {
-
+/*Inicia a função construtora*/
   public function __construct()
   {
 
   }
 
-
+/* Função publica que executa a query do banco de dados para buscar os jogos da biblioteca do usuario*/
   public function getBiblioteca($id, $usuario)
   {
     $instance = new Database();
@@ -32,7 +32,7 @@ class Biblioteca
     return $dados;
 
   }
-
+/* Função publica que executa a query do banco de dados para buscar um jogo*/
   public function viewGame($id_jogo, $id_usuario, $usuario) {
     $instance = new Database();
     $conn = $instance->getInstance();
@@ -50,7 +50,7 @@ class Biblioteca
 
     return $dados;
   }
-
+/* Função publica que executa a query do banco de dados para excluir o jogo*/
   public function deleteGame ($id_usuario, $id_jogo, $id_biblioteca = []){
     $instance = new Database();
     $conn = $instance->getInstance();
@@ -68,7 +68,7 @@ class Biblioteca
       return false;
     }
   }
-
+/* Função publica que executa a query do banco de dados para adicionar o jogo na biblioteca do usuario*/
   public function addGame($id_usuario, $id_jogo)
   {
     $instance = new Database();

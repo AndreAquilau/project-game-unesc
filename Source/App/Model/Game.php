@@ -3,13 +3,15 @@
 namespace Source\App\Model;
 
 use Source\db\Database;
-
+/* Classe para representar o jogo */
 class Game
 {
+  /* Atributos privados */
   private $id;
   private $usuario;
   private $errors = [];
 
+  /* Função pública construtora para atribuir os dados corretos da classe Jogo */
   public function __construct($id = [], $usuario = [])
   {
     $this->id = $id;
@@ -24,6 +26,7 @@ class Game
 
   }
 
+  /* Função publica para executar a query sql para inserir um jogo no banco de dados */
   public function postGame($params) {
   
     $instance = new Database();
@@ -68,6 +71,7 @@ class Game
       return $params;
     }
   }
+/* Função publica que executa a query do banco de dados para excluir o jogo*/
 
   public function deleteGame($id_jogo)
   {
@@ -88,6 +92,7 @@ class Game
           return false;
       }
   }
+/* Função publica que valida os dados dos jogos*/
 
   public function validar($dados){
 
@@ -107,6 +112,7 @@ class Game
     array_push($this->errors, "Selecione o Dispositivo!!!");
   };
 }
+/* Função publica que executa a query do banco de dados para retornar todos os dados dos jogos do sistema*/
 
   public function gameAll(){
     $instance = new Database();

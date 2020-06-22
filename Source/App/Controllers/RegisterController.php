@@ -5,8 +5,10 @@ namespace Source\App\Controllers;
 
 use Source\App\Model\Usuario;
 
+/* Classe para registrar o usuário */
 class RegisterController 
 {
+    /* Retorna a página para cadastrar o usuário */
     public function getRegister($params)
     {
 
@@ -16,6 +18,8 @@ class RegisterController
         LoadTemplate("register/register", $params);
 
     }
+
+        /* Realiza o cadastro do usuário */
 
     public function postRegister($params)
     {

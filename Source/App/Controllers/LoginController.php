@@ -7,8 +7,11 @@ use Source\App\Model\Usuario;
 use Source\core\Router;
 use Source\App\Model\Perfil;
 use Source\App\Model\Game;
+
+/*  Classe está herdando os métodos de Router*/
 class LoginController extends Router
 {
+    /* Carrega página de login */
     public function getLogin($params)
     {
 
@@ -16,14 +19,14 @@ class LoginController extends Router
         LoadTemplate("login/login", $params);
 
     }
-
+/* Função publica para fazer login e mostrar os jogos cadastrados*/
     public function postLogin($params)
     {
         $params["TITULO"] = "Company Game";
 
-
+        /* Verifica se usuário está logado no sistema */
         if(!empty($_POST['usuario']) && !empty($_POST['id'])){
-
+            /* Busca todos os jogos e carrega a página para listar os jogos */
             $user = new Perfil($_POST['id'], $_POST['usuario']);
             $dados = json_encode($user->getPerfil());
             $params["USUARIO"] = json_decode($dados, true);
@@ -36,6 +39,7 @@ class LoginController extends Router
             return;
         }
 
+        /* Busca os campos do usuário para fazer o login */
         $input = [
             "usuario"=> $_POST['usuario'],
             "senha"=> $_POST['senha'],
