@@ -70,20 +70,24 @@
 							<h3 class="product-title">{{row.titulo |slice(0, 17)}}.</h3>
 							<small class="price">$00.00</small>
 							<div>	
-							<form>
+							<form >
+							<div class="form-group">
                             <input type="hidden" name="id_jogo" value="{{row.id}}">
 							<input type="hidden" name="id" value="{{USUARIO.id}}">
 							<input type="hidden" name="id_usuario" value="{{USUARIO.id}}">
 							<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
 							<input type="hidden" name="ADD" value="ADD">
                             <input type="submit" formaction="{{URL_BASE}}biblioteca" formmethod="GET" value="Add Biblioteca">
-                      		</form> 	
+							</div>
+						</form> 
 							<form>
+							<div class="form-group">
                             <input type="hidden" name="id_jogo" value="{{row.id}}">
 							<input type="hidden" name="id" value="{{USUARIO.id}}">
 							<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
-                            <input type="submit" formaction="{{URL_BASE}}viewGame" formmethod="GET" value="Visualizar">
-                      		</form> 	
+							<input  type="submit" formaction="{{URL_BASE}}viewGame" formmethod="GET" value="Visualizar">
+							</div>
+							</form>  	
 							</div>
 							<!-- http://localhost:8080/Projeto-Game/viewGame?id_jogo=22&usuario=Andre&id=1 -->
 							 
@@ -127,5 +131,58 @@
 	</div> <!-- .row -->
 
 </div> <!-- .auth-popup -->
+<div class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Turma</h3>
+          <ul class="no-bullet">
+            <li><a href="#">3° Período</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Alunos</h3>
+          <ul class="no-bullet">
+            <li><a href="#">André</a></li>
+            <li><a href="#">Isabelly</a></li>
+            <li><a href="#">Janismar</a></li>
+            <li><a href="#">Letícia</a></li>
+            <li><a href="#">Miguel</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Matéria</h3>
+          <ul class="no-bullet">
+            <li><a href="#">Programação Orientada a Objetos</a></li>
+            <li><a href="#">Prof° Diego</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-6">
+        <div class="widget">
+          <h3 class="widget-title">Alunos do 3° Período de Sistemas de Informação da Unesc</h3>
+          <form action="#" class="newsletter-form">
+            <input type="text" placeholder="Digite seu email...">
+            <input type="submit" value="Enviar">
+          </form>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+    </div><!-- .row -->
 
+    <div class="colophon">
+      <div class="copy">Copyright 2020 Alunos do 3° Período de Sistemas de Informação da Unesc. Designed by Themezy. All rights reserved.</div>
+      <div class="social-links square">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+      </div> <!-- .social-links -->
+    </div> <!-- .colophon -->
+  </div> <!-- .container -->
+</div> <!-- .site-footer -->
 {% endblock %}
