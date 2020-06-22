@@ -36,6 +36,9 @@
 					</div>
 					<img src="{{row.thumb_url}}" class="slide-image">
 				</div>
+				<button class="btn bg-success text-white" style="margin-top: 3%;" onclick="window.location.href='{{URL_BASE}}login';">
+						Add Biblioteca
+				</button>
 			</li>
     		{% endfor %}
 		</ul> <!-- .slides -->

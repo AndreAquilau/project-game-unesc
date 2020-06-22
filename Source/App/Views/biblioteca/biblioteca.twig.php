@@ -11,7 +11,7 @@
       <div id="branding">
         <img src="{{ASSETS}}/img/logo.png" alt="" class="logo">
         <div class="logo-text">
-          <h1 class="site-title">Company name</h1>
+          <h1 class="site-title">xPlay</h1>
         </div>
       </div> <!-- #branding -->
       <form id="formUser">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="product-detail">
                       <h3 class="product-title">{{row.titulo}}</h3>
-                      <p>{{row.descricao}}.</p>
+                      <p>{{row.descricao |slice(0, 60) }}...</p>
                     </div>
                   </td>
                   <td class="product-price">R$00.00</td>
@@ -74,12 +74,23 @@
                   <td class="action">
                     <div>
                       <form>
-                        <input type="hidden" name="id" value="{{row.id_usuario}}">
-                        <input type="hidden" name="id_jogo" value="{{row.id_jogo}}">
-                        <input type="hidden" name="id_usuario" value="{{row.id_usuario}}">
-                        <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" value="Remover" formaction="{{URL_BASE}}biblioteca"  >
+                        {% if USUARIO.id != row.id_desenvolvedor %}
+                          <input type="hidden" name="id" value="{{row.id_usuario}}">
+                          <input type="hidden" name="id_jogo" value="{{row.id_jogo}}">
+                          <input type="hidden" name="id_usuario" value="{{row.id_usuario}}">
+                          <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <input type="submit" value="Remover" formaction="{{URL_BASE}}biblioteca">
+                        {% endif %}
+                      </form>
+                      <form>
+                          {% if USUARIO.id == row.id_desenvolvedor %}
+                            <input type="hidden" name="id" value="{{USUARIO.id}}">
+                            <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+                            <input type="hidden" name="id_jogo" value="{{GAME[0].id_jogo}}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" formaction="{{URL_BASE}}game" formmethod="GET" style="background-color: Tomato" value=" Deletar ">
+                          {% endif %}
                       </form>
                     </div>
                   </td>   

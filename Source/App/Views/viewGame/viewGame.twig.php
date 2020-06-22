@@ -11,7 +11,7 @@
             <div id="branding">
                 <img src="{{ASSETS}}/img/logo.png" alt="" class="logo">
                 <div class="logo-text">
-                    <h1 class="site-title">Company name</h1>
+                    <h1 class="site-title">xPlay</h1>
                 </div>
             </div> <!-- #branding -->
             <form id="formUser">
