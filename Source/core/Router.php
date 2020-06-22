@@ -72,7 +72,7 @@ class Router
     public function biblioteca(){
         $this->router->namespace("Source\App\Controllers");
         $this->router->get("/biblioteca", "BibliotecaController:getBiblioteca", "BibliotecaController.getBiblioteca");
-        $this->router->post("/biblioteca", "BibliotecaControllerBibliotecaController :postBiblioteca", "BibliotecaController.postBiblioteca");
+        $this->router->post("/biblioteca", "BibliotecaController:postBiblioteca", "BibliotecaController.postBiblioteca");
         $this->router->get("/viewGame", "BibliotecaController:viewGame", "BibliotecaController.viewGame");
     }
 

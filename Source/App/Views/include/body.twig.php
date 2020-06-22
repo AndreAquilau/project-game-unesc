@@ -11,7 +11,9 @@
     <link href="{{ASSETS}}/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="{{ASSETS}}/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
 
-    {% block head %} {% endblock %}
+    {% block head %} 
+    
+    {% endblock %}
 </head>
 
 <body class=" badge-light">

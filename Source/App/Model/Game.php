@@ -108,4 +108,23 @@ class Game
   };
 }
 
+  public function gameAll(){
+    $instance = new Database();
+    $conn = $instance->getInstance();
+
+    $sql = ("SELECT * FROM Jogo ORDER BY  id DESC");
+
+    echo $sql;
+ 
+    $stmt = $conn->prepare($sql);
+    
+    $stmt->execute();  
+    if($stmt->rowCount() > 0){
+        $dados = $stmt->fetchAll();
+        return $dados;
+    } else {
+        return false;
+    }
+  }
+
 }

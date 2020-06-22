@@ -55,9 +55,9 @@
                         <div class="addtocart-bar">
                             <form>
                                 <a href="{{GAME[0].dowload_url}}"  target="_blank">Download</a>
-                                {% if GAME[0].id_usuario == GAME[0].id_desenvolvedor %}
-                                    <input type="hidden" name="id" value="{{GAME[0].id_usuario}}">
-                                    <input type="hidden" name="usuario" value="{{GAME[0].usuario}}">
+                                {% if USUARIO.id == GAME[0].id_desenvolvedor %}
+                                    <input type="hidden" name="id" value="{{USUARIO.id}}">
+                                    <input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
                                     <input type="hidden" name="id_jogo" value="{{GAME[0].id_jogo}}">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="submit" formaction="{{URL_BASE}}game" formmethod="GET" style="background-color: Tomato" value="Remover Jogo da Biblioteca Para Todos">

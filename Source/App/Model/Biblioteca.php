@@ -37,8 +37,8 @@ class Biblioteca
     $instance = new Database();
     $conn = $instance->getInstance();
 
-    $sql = ('SELECT * FROM  user_biblioteca WHERE ID_JOGO =\'' . $id_jogo . "'" . ' AND ' . 'ID_USUARIO = \'' . $id_usuario . "'" . ' AND ' . 'usuario = \'' . $usuario . "'");
-
+    //$sql = ('SELECT * FROM  user_biblioteca WHERE ID_JOGO =\'' . $id_jogo . "'" . ' AND ' . 'ID_USUARIO = \'' . $id_usuario . "'" . ' AND ' . 'usuario = \'' . $usuario . "'");
+    $sql = (" SELECT * , id AS id_jogo, id_usuario AS id_desenvolvedor FROM Jogo WHERE id = $id_jogo");
     //echo $sql;
     $stmt = $conn->prepare($sql);
 
@@ -56,7 +56,6 @@ class Biblioteca
     $conn = $instance->getInstance();
 
     $sql = ("DELETE FROM Biblioteca WHERE id_usuario = $id_usuario AND id_jogo = $id_jogo");
-
     //echo $sql;
  
 
@@ -70,6 +69,22 @@ class Biblioteca
     }
   }
 
+  public function addGame($id_usuario, $id_jogo)
+  {
+    $instance = new Database();
+    $conn = $instance->getInstance();
+    $sql = ('INSERT INTO Biblioteca(id_usuario, id_jogo)' ." VALUES(".$id_usuario.", ".$id_jogo.")");
+    $stmt = $conn->prepare($sql);
+    $stmt->execute(); 
+
+    if($stmt->rowCount() > 0){
+      return true;
+    } else {
+      return true;
+    }
+
+
+  }
 
 
 }

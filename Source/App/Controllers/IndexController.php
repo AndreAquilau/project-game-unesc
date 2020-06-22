@@ -5,16 +5,26 @@ namespace Source\App\Controllers;
 
 use Source\App\Model\Usuario;
 use Source\core\Router;
+use Source\App\Model\Game;
 
 class IndexController extends Router
 {
+ 
     public function getIndex($params)
     {
 
-        $params["TITULO"] = "Company Game";
-        LoadTemplate("index/index", $params);
+        $params["TITULO"] = "xPlay";
+            $jogos = new Game();
+            $jogos = json_encode($jogos->gameAll(), JSON_UNESCAPED_UNICODE);
+            $jogos = json_decode($jogos, true);
+            $params["GAME"] = $jogos;
+            print_r($params);
+
+            LoadTemplate("index/index", $params);
 
     }
+
+    
 
     public function postIndex($params)
     {
