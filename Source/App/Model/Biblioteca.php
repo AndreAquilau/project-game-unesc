@@ -51,7 +51,7 @@ class Biblioteca
     return $dados;
   }
 
-  public function deleteGame ($id_usuario, $id_jogo){
+  public function deleteGame ($id_usuario, $id_jogo, $id_biblioteca = []){
     $instance = new Database();
     $conn = $instance->getInstance();
 
@@ -73,11 +73,14 @@ class Biblioteca
   {
     $instance = new Database();
     $conn = $instance->getInstance();
-    $sql = ('INSERT INTO Biblioteca(id_usuario, id_jogo)' ." VALUES(".$id_usuario.", ".$id_jogo.")");
+    $sql = "SELECT * FROM Biblioteca WHERE id_usuario = $id_usuario AND id_jogo = $id_jogo";
     $stmt = $conn->prepare($sql);
     $stmt->execute(); 
 
-    if($stmt->rowCount() > 0){
+    if($stmt->rowCount() == 0){
+      $sql = ('INSERT INTO Biblioteca(id_usuario, id_jogo)' ." VALUES(".$id_usuario.", ".$id_jogo.")");
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
       return true;
     } else {
       return true;

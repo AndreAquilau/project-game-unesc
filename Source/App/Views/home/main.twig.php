@@ -14,7 +14,7 @@
       <div id="branding">
         <img src="{{ASSETS}}/img/logo.png" alt="" class="logo">
         <div class="logo-text">
-          <h1 class="site-title">Company name</h1>
+          <h1 class="site-title">xPlay</h1>
         </div>
       </div> <!-- #branding -->
       <form id="formUser">
@@ -32,7 +32,7 @@
   </div>
 
   <div class="home-slider " >
-		<ul class="slides container" style="position: relative; color: #f5f5f5"  >
+		<ul class="slides container" style="position: relative; color: #f5f5f5; width: 65%"  >
 			{% for row in GAME|slice(0, 3) %}
 				<li data-bg-image="{{ASSETS}}/dummy/slide-3.jpg">
 				<div class="container">
@@ -40,7 +40,16 @@
 						<h2 class="slide-title">{{row.titulo}}</h2>
 						<small class="slide-subtitle">$00.00</small>	
 						<p>{{row.descricao}}.</p>
-						<a href="cart.html" class="button">Add to cart</a>
+            <form >
+							<div class="form-group">
+              <input type="hidden" name="id_jogo" value="{{row.id}}">
+							<input type="hidden" name="id" value="{{USUARIO.id}}">
+							<input type="hidden" name="id_usuario" value="{{USUARIO.id}}">
+							<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
+							<input type="hidden" name="ADD" value="ADD">
+              <input type="submit" formaction="{{URL_BASE}}biblioteca" formmethod="GET" value="Add Biblioteca">
+							</div>
+						  </form> 
 					</div>
 					<img src="{{row.thumb_url}}" class="slide-image">
 				</div>
@@ -72,14 +81,14 @@
 							<div>	
 							<form >
 							<div class="form-group">
-                            <input type="hidden" name="id_jogo" value="{{row.id}}">
+              <input type="hidden" name="id_jogo" value="{{row.id}}">
 							<input type="hidden" name="id" value="{{USUARIO.id}}">
 							<input type="hidden" name="id_usuario" value="{{USUARIO.id}}">
 							<input type="hidden" name="usuario" value="{{USUARIO.usuario}}">
 							<input type="hidden" name="ADD" value="ADD">
-                            <input type="submit" formaction="{{URL_BASE}}biblioteca" formmethod="GET" value="Add Biblioteca">
+              <input type="submit" formaction="{{URL_BASE}}biblioteca" formmethod="GET" value="Add Biblioteca">
 							</div>
-						</form> 
+						  </form> 
 							<form>
 							<div class="form-group">
                             <input type="hidden" name="id_jogo" value="{{row.id}}">

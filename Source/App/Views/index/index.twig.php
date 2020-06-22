@@ -25,7 +25,7 @@
 
 	
 	<div class="home-slider " >
-		<ul class="slides container" style="position: relative; color: #f5f5f5"  >
+		<ul class="slides container" style="position: relative; color: #f5f5f5; width: 65%; "  >
 			{% for row in GAME|slice(0, 3) %}
 				<li data-bg-image="{{ASSETS}}/dummy/slide-3.jpg">
 				<div class="container">

@@ -71,5 +71,63 @@
     </div> <!-- .container -->
 </main> <!-- .main-content -->
 
+<div class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Turma</h3>
+          <ul class="no-bullet">
+            <li><a href="#">3° Período</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Alunos</h3>
+          <ul class="no-bullet">
+            <li><a href="#">André</a></li>
+            <li><a href="#">Isabelly</a></li>
+            <li><a href="#">Janismar</a></li>
+            <li><a href="#">Letícia</a></li>
+            <li><a href="#">Miguel</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-2">
+        <div class="widget">
+          <h3 class="widget-title">Matéria</h3>
+          <ul class="no-bullet">
+            <li><a href="#">Programação Orientada a Objetos</a></li>
+            <li><a href="#">Prof° Diego</a></li>
+          </ul>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+      <div class="col-md-6">
+        <div class="widget">
+          <h3 class="widget-title">Alunos do 3° Período de Sistemas de Informação da Unesc</h3>
+          <form action="#" class="newsletter-form">
+            <input type="text" placeholder="Digite seu email...">
+            <input type="submit" value="Enviar">
+          </form>
+        </div> <!-- .widget -->
+      </div> <!-- column -->
+    </div><!-- .row -->
+
+    <div class="colophon">
+      <div class="copy">Copyright 2020 Alunos do 3° Período de Sistemas de Informação da Unesc. Designed by Themezy. All rights reserved.</div>
+      <div class="social-links square">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+      </div> <!-- .social-links -->
+    </div> <!-- .colophon -->
+  </div> <!-- .container -->
+</div> <!-- .site-footer -->
+<div>
+
+</div>
+
 </>
 {% endblock %}
