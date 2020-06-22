@@ -77,7 +77,7 @@ class Game
   
       $sql = ("DELETE FROM Jogo WHERE id = $id_jogo");
   
-      echo $sql;
+      //echo $sql;
    
       $stmt = $conn->prepare($sql);
       
@@ -114,7 +114,7 @@ class Game
 
     $sql = ("SELECT * FROM Jogo ORDER BY  id DESC");
 
-    echo $sql;
+    //echo $sql;
  
     $stmt = $conn->prepare($sql);
     

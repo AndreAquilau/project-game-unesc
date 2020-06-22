@@ -31,7 +31,7 @@ class LoginController extends Router
             $jogos = json_encode($jogos->gameAll(), JSON_UNESCAPED_UNICODE);
             $jogos = json_decode($jogos, true);
             $params["GAME"] = $jogos;
-            print_r($params);
+           // print_r($params);
             LoadTemplate("home/main", $params);
             return;
         }
@@ -49,7 +49,7 @@ class LoginController extends Router
         $user->login();
 
         if(count($user->errors) > 0){
-            print_r($user->errors);
+           // print_r($user->errors);
             $params["ERRORS"] = $user->errors;
             LoadTemplate("login/login", $params);
             return;
@@ -64,7 +64,7 @@ class LoginController extends Router
         $params["GAME"] = $jogos;
         $params["USUARIO"] = $dados;
 
-        print_r($params);
+       // print_r($params);
         
         LoadTemplate("home/main", $params);
        

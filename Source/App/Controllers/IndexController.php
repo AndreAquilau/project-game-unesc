@@ -18,7 +18,7 @@ class IndexController extends Router
             $jogos = json_encode($jogos->gameAll(), JSON_UNESCAPED_UNICODE);
             $jogos = json_decode($jogos, true);
             $params["GAME"] = $jogos;
-            print_r($params);
+           // print_r($params);
 
             LoadTemplate("index/index", $params);
 
@@ -42,7 +42,7 @@ class IndexController extends Router
         $user->login();
 
         if(count($user->errors) > 0){
-            print_r($user->errors);
+           // print_r($user->errors);
             $params["ERRORS"] = $user->errors;
             LoadTemplate("index/index", $params);
             return;

@@ -84,7 +84,7 @@ class BibliotecaController extends Router
         $params["USUARIO"] = json_decode($dados, true);
         $params["GAME"] = json_decode($res,  true);
 
-        print_r($params);
+        //print_r($params);
 
         LoadTemplate("addGame/addGame", $params);
 
