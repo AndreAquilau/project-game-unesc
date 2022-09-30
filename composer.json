@@ -8,7 +8,7 @@
     ],
     "require": {
         "coffeecode/router": "^1.0",
-        "twig/twig": "1.37.1"
+        "twig/twig": "1.44.7"
     },
     "autoload": {
         "psr-4": {
